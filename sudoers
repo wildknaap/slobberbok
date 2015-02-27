@@ -1,0 +1,3 @@
+Cmnd_Alias	VPN = /usr/sbin/openvpn --config /home/<user>/.vpn/client.ovpn
+
+<user> ALL=NOPASSWD: VPN
