@@ -1,0 +1,14 @@
+#Inside vcl_recv container:
+
+    # Don't cache Wordpress admin/login page
+    if (req.url ~ "wp-admin|wp-login") {
+        return (pass);
+    }
+
+    # Safe to ignore Wordpress cookies
+    set req.http.cookie = regsuball(req.http.cookie, "wp-settings-\d+=[^;]+(; )?", "");
+    set req.http.cookie = regsuball(req.http.cookie, "wp-settings-time-\d+=[^;]+(; )?", "");
+    set req.http.cookie = regsuball(req.http.cookie, "wordpress_test_cookie=[^;]+(; )?", "");
+    if (req.http.cookie == "") {
+        unset req.http.cookie;
+    }
