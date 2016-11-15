@@ -3,6 +3,7 @@
 #
 
 EMAIL="<mail>"
+HOST="<host>"
 MDADM="/sbin/mdadm"
 DEVICES="/dev/md0\
 	/dev/md1\
@@ -12,13 +13,13 @@ for i in $DEVICES
 
 	do 
 	
-	STATUS=`$MDADM --detail $i |grep State |head -n 1 |awk '{ print $3 }'`
-	
+	#STATUS=`$MDADM --detail $i |grep State |head -n 1 |awk '{ print $3 }'`
+	STATUS="NAAKT"
 		if [ "$STATUS" == "clean" ]
 
 			then /usr/bin/logger -s "RAID STATUS $i: $STATUS"
 
-			else `/bin/echo "[RAID FAILURE] <host> on $i" |/usr/bin/mail -s "[RAID FAILURE] <host> on $i with $STATUS" $EMAIL`
+			else `/bin/echo "[RAID FAILURE] $HOST on $i with $STATUS" |/usr/bin/mail -s "[RAID FAILURE] $HOST on $i" $EMAIL`
 
 		fi
 
