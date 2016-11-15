@@ -18,7 +18,7 @@ for i in $DEVICES
 
 			then /usr/bin/logger -s "RAID STATUS $i: $STATUS"
 
-			else `/bin/echo "[RAID FAILURE] amorphis on $i" |/usr/bin/mail -s "[RAID FAILURE] amorphis on $i" $EMAIL`
+			else `/bin/echo "[RAID FAILURE] <host> on $i" |/usr/bin/mail -s "[RAID FAILURE] <host> on $i" $EMAIL`
 
 		fi
 
