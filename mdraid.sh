@@ -13,8 +13,8 @@ for i in $DEVICES
 
 	do 
 	
-	#STATUS=`$MDADM --detail $i |grep State |head -n 1 |awk '{ print $3 }'`
-	STATUS="NAAKT"
+	STATUS=`$MDADM --detail $i |grep State |head -n 1 |awk '{ print $3 }'`
+	
 		if [ "$STATUS" == "clean" ]
 
 			then /usr/bin/logger -s "RAID STATUS $i: $STATUS"
