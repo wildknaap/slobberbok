@@ -7,16 +7,10 @@ DATE=`date +%Y%m%d`
 VG="/dev/<vg>"
 LV="<lv>"
 
-/sbin/lvcreate --size 10G --snapshot --name "$LV"_snap $VG/$LV
-
-/bin/dd if=$VG/"$LV"_snap of=$SNAPDIR/$LV.dd-$DATE
-
-/bin/tar -cvjf $SNAPDIR/$LV.dd-$DATE.tar.bz2 $SNAPDIR/$LV.dd-$DATE
-
-/sbin/lvremove -f $VG/"$LV"_snap
-
-/bin/rm $SNAPDIR/$LV.dd-$DATE
-
-/usr/bin/logger -s "snapshot of $LV completed"
+  /sbin/lvcreate --size 10G --snapshot --name "$i"_snap $VG/$i
+	/bin/dd if=$VG/"$i"_snap | gzip > $SNAPDIR/$i.dd-$DATE.gz
+	/sbin/lvremove -f $VG/"$i"_snap
+	/bin/rm $SNAPDIR/$i.dd-$DATE
+	/usr/bin/logger -s "Snapshot of $i completed"
 
 # EOF
