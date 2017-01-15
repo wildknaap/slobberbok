@@ -5,9 +5,11 @@
 EMAIL="<mail>"
 SNAPDIR="<snapshot dir>"
 DATE=`date +%Y%m%d`
+RETENTION="<days>" 
 VG="/dev/vg_<volumegroup>"
 LV="<lv_snapshot>"
 
+/usr/bin/find $SNAPDIR -mtime +"$RETENTION" -exec rm {} \;
 
 for i in $LV
 
