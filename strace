@@ -1,0 +1,1 @@
+screen strace -p <PID> -t -s 20000 -ff -o /root/<DATE>.strace
