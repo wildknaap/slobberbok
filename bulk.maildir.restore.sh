@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#
+# use case: major maildir fuckup
 
 USERS=`cat mailuser.list`
 DOMAIN="<domain>" 
