@@ -1,4 +1,4 @@
-MONITORIP="8.8.8.8"
+MONITORIP="<IP>"
 MESSAGE="Ping failure, rebooting"
 PINGCOUNT="4"
 ALIVE=`/sbin/ping -c $PINGCOUNT $MONITORIP |/usr/bin/grep time |/usr/bin/wc -l`
