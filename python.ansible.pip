@@ -1,0 +1,14 @@
+Manage multiple Python installations
+-------------------------------------
+
+update-alternatives --install /usr/bin/python python /usr/bin/python3.5 1
+update-alternatives --install /usr/bin/python python /usr/bin/python3.4 2
+
+update-alternatives --config python (select default)
+
+
+
+PIP Ansible version management
+------------------------------
+
+pip install -I ansible==2.5.0
