@@ -1,0 +1,35 @@
+How to setup a PIP virtual environment
+--------------------------------------
+
+As normal system user:
+
+# Install pip yourself to ensure you have the latest version. It’s recommended to use the system pip to bootstrap a user installation of pip:
+pip install --user --upgrade pip
+
+# Install virtualenv using pip
+pip install --user virtualenv
+
+# Install virtualenv using pip
+pip install --user virtualenv
+
+# Go to local git repository and:
+python3 -m virtualenv env
+
+# Before you can start installing or using packages in your virtualenv you’ll need to activate it. Activating a virtualenv will put the virtualenv-specific python # and pip executables into your shell’s PATH.
+source env/bin/activate
+
+# Confirm that the virtual environment is active
+which python, should return: .../env/bin/python
+
+# Install the needed packages, example
+pip install ansible==2.0.0.2
+
+# Leave your virtualenv
+deactivate
+
+
+Examples
+--------
+
+# Switch to environment:
+source <environment>/bin/activate
