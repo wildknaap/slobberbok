@@ -23,6 +23,7 @@ which python, should return: .../env/bin/python
 
 # Install the needed packages, example
 pip install ansible==2.0.0.2
+pip install requests
 
 # Leave your virtualenv
 deactivate
