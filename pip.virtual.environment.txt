@@ -9,9 +9,6 @@ pip install --user --upgrade pip
 # Install virtualenv using pip
 pip install --user virtualenv
 
-# Install virtualenv using pip
-pip install --user virtualenv
-
 # Go to local git repository and:
 python3 -m virtualenv env
 
