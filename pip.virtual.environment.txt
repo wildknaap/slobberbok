@@ -31,3 +31,6 @@ Examples
 
 # Switch to environment:
 source <environment>/bin/activate
+
+# Initialise Ansible directory structure:
+~/ansible-2.5.0/bin/ansible-galaxy init --force <role name>
