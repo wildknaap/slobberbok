@@ -1,0 +1,22 @@
+Ansible version management via https://github.com/ansible/ansible
+-----------------------------------------------------------------
+
+# Clone the Ansible repository
+git clone https://github.com/ansible/ansible.git
+
+# Review versions
+git tag
+
+# Switch to a specific version
+git checkout <version>
+
+# Check if Ansible works
+ansible --version
+
+# Source the env
+source hacking/env-setup
+
+# Switch to the Ansible working dir
+
+# If modules are needed, install via 
+git submodule update --init --recursive
