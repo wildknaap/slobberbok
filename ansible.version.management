@@ -10,11 +10,11 @@ git tag
 # Switch to a specific version
 git checkout <version>
 
-# Check if Ansible works
-ansible --version
-
 # Source the env
 source hacking/env-setup
+
+# Check if Ansible works
+ansible --version
 
 # Switch to the Ansible working dir
 
