@@ -20,3 +20,31 @@ ansible --version
 
 # If modules are needed, install via 
 git submodule update --init --recursive
+
+
+Alternative to the manual actions above
+---------------------------------------
+
+~/.profile
+
+function ans {
+  ansrepo=~/github.com/ansible
+
+  if [ -n "$1" ]; then
+    cd "$ansrepo" || { echo "Missing gitrepo \"$ansrepo\"" >&2; return 1; }
+    ver="$(git tag | egrep "^v$1" | head -1)"
+    if [ -n "$ver" ]; then
+      git checkout $ver
+    else
+      echo "No such version \"$1\"" >&2
+      return 1
+    fi
+    cd -
+  fi
+  source "$ansrepo/hacking/env-setup"
+}
+
+source ~/.profile
+
+# select Ansible version with
+ans 2.5.0
